@@ -78,7 +78,6 @@ nav li:first-child::before {
 nav li>a {
   font-size: 8.65655pt;
   color: #fff;
-  /* font-weight: 700; */
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -137,8 +136,7 @@ nav li>a:hover {
 .iphone-horizontal .iphone-body {
   transform: scale(1,-1);
   position:relative;
-  top: -0.51px;
-  left: -0.5px;
+  top: -2px;
 }
 
 .iphone-body {
