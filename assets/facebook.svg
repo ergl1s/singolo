@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #666d89;
+        stroke-width: 1px;
+      }
+    </style>
+  </defs>
+  <image id="facebook" x="12" y="9" width="8" height="14" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAAc0lEQVQYlWNMy+1kQAJGDAwM0xgYGMxhQixIkiIMDAx7GBgYBJF1ICuIRZJcw8DAcBRdgTwSu5WBgeECTIEBVFAUSYE6shXnGTDBCpgIExZJFABSYAjFy5BkImDiICvAjmFgYHiNpOAmTJwoKwZUAQMDAwBo8Q3A9GYnpwAAAABJRU5ErkJggg=="/>
+  <circle class="cls-1" cx="16" cy="16" r="16"/>
+</svg>
