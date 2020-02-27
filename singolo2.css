@@ -3,7 +3,7 @@
   font-family: "Lato", sans-serif;;
 }
 
-.wrapper {
+.portfolio .wrapper, .about-us .wrapper {
   height: calc(100% - 60px); 
   max-width: calc(1020px - 80px);
   margin: 0 auto;
@@ -16,14 +16,14 @@
   border-bottom: 6px solid #323746;
 }
 
-h2 {
+.portfolio h2, .about-us h2 {
   font-size: 30px;
   font-weight: 900;
   color: #666d89;
-  letter-spacing: -0.1px;
+  letter-spacing: 0.25px;
 }
 
-p {
+.portfolio p, .about-us p{
   font-size: 18px;
   font-weight: 300;
   color: #767e9e;
@@ -41,6 +41,7 @@ p {
   margin: 19px 0; 
   position: relative;
   top: 18px;
+  left: 1px;
 }
 
 .list li {
@@ -50,7 +51,31 @@ p {
   color: #767e9e;
   padding: 6px;
   border: 1px solid #666d89;
-  border-radius: 4px; 
+  border-radius: 5px; 
+}
+
+.list li:nth-child(1) {
+  padding-right: 7px;
+}
+
+.list li:nth-child(2) {
+  position: relative;
+  left: 1px;
+}
+
+.list li:nth-child(3) {
+  position: relative;
+  left: 1px;
+}
+
+.list li:nth-child(4) {
+  position: relative;
+}
+
+.list li:hover{
+  color: #c5c5c5;
+  border-color: #c5c5c5; 
+  cursor: pointer;
 }
 
 .images {
@@ -59,6 +84,10 @@ p {
   grid-gap: 20px; 
   position: relative;
   top: 18px;
+}
+
+.portfolio .portfolio-image:nth-child(n+13){
+  display: none;
 }
 
 .about-us {
@@ -70,6 +99,7 @@ p {
 .about-us h2{
   position: relative;
   top: -1px;
+  letter-spacing: -0.1px;
 }
 
 .about-us p{
@@ -85,4 +115,35 @@ p {
   grid-gap: 20px; 
   position: relative;
   top: 62px;
+}
+
+.person h3 {
+  color: #666d89;
+  letter-spacing: -0.4px;
+  white-space: nowrap;
+  position: relative;
+  top: 12px;
+  left: -1px;
+}
+
+.person p {
+  font-weight: 400; 
+  position: relative;
+  top: 22px;
+  font-size: 12px;
+  letter-spacing: -0.1px;
+  line-height: 20px;
+}
+
+.person:nth-child(2) .persons-photo {
+  position: relative;
+  left: -1px;
+}
+.social-icons {
+  position: relative;
+  top: 46px;
+}
+
+.social-icons img{
+  margin-right: 4px;
 }
