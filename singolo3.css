@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  font-family: "Lato", sans-serif;;
+}
+
+.get-a-quote {
+  height: 648px;
+  background-color: #f06c64;
+  border-bottom: 6px solid #ea676b;
+}
+
+.get-a-quote .wrapper{
+  height: calc(100% - 59px); 
+  max-width: calc(1020px - 80px);
+  margin: 0 auto;
+  padding: 59px 40px 0px 40px;
+}
+
+footer .wrapper {
+  height: 100%; 
+  max-width: calc(1020px - 80px); 
+  margin: 0 auto;
+  padding: 0px 40px;
+}
+footer {
+  height: 76px;
+  background-color: #2d303a;
+}
+
+footer .wrapper {
+  padding-top: 0;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .list {
+  list-style: none;
+  display: flex; 
+  position: relative;
+  top: 1px;
+}
+
+footer .list li {
+  margin-left: 8px;
+}
+.get-a-quote h2{
+  font-size: 30px;
+  font-weight: 900;
+  color: #f0d8d9;
+  letter-spacing: -0.25px;
+}
+
+.get-a-quote .wrapper> p {
+  color: #f0d8d9;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: -0.046px;
+  position: relative;
+  top: 18px;
+  line-height: 30px;
+}
+
+.form-and-aside-grid {
+  display: grid; 
+  grid-template: 400px / 619px 300px; 
+  grid-gap: 20px;
+  position: relative;
+  top: 62px;
+}
+
+form {
+  display: flex; 
+  flex-direction: column;
+}
+
+aside .list {
+  list-style: none;
+}
+
+aside h3 {
+  color: #f0d8d9;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.23px;  
+  position: relative;
+  top: 0px;
+}
+
+.aside-paragraph { 
+  color: #f0d8d9;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.23px;  
+  position: relative;
+  top: 0px;
+}
+
+.copyright-wrapper {
+  color: #666d89;
+  font-size: 12px;
+  position: relative;
+  top: -1px;
+  left: 2px;
+  letter-spacing: -0.3px;
+}
+
+input, textarea { 
+  background-color: #d6564f;
+  border: none;
+  width: 589px;
+  height: 37px;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  padding: 0px 15px 1px;
+}
+
+input::placeholder {
+  color: #f48c8f;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+#textarea::placeholder {
+  color: #f48c8f;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.39px;
+}
+#textarea {
+  height: calc(202px - 2 * 11px);
+  padding: 11px 15px;
+}
