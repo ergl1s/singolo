@@ -1,13 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-        stroke: #666d89;
-        stroke-width: 1px;
-      }
-    </style>
-  </defs>
-  <image id="google_" data-name="google+" x="9" y="9" width="14" height="14" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAA+ElEQVQokX2SwW0CQQxFHyvuQAVJCVvCUgFQAZtLbiiiAsIxJ+gAqABSAXQQOiDpYDsg+tKfjZFm86XRrGftb/vbvdfFB8AQ2AA1f2iAE/BCBn0/nR08Bp6Bne11LkgogAoogQNwAfY+mOTfQGEQ3n8yvndX1gZe/F27POHJ93dXxr4Dry73y7ZItiY6B/8y2UmcsZ0nvpVp6TaqEDhMduGHxhmWQZSds/d8iHZhlnfg5lITar93qnoEVmYbmXHm/2/BVzPVyFpxVLPEiRuijdEs4yY9ZE89pjFEiFC9Z6GMcRSf9ppbIAnWGah+tOBTEySV1VNeHOAX0g8vlfRPqBwAAAAASUVORK5CYII="/>
-  <circle id="Ellipse_2_copy" data-name="Ellipse 2 copy" class="cls-1" cx="16" cy="16" r="16"/>
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="32px" height="32px">
+<image  x="0px" y="0px" width="32px" height="32px"  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA51BMVEVmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYn///9eEyQPAAAAS3RSTlMADFeYyOn4IpvvtG45FwcjCIiBFRbPqhgkMuVrMedUCWzQqYnqgBCfnA3fQGAgmm2Pvzs66zD5BnBQr38litEKqBTwszgF8ViZyfqoO1ntAAAAAWJLR0RM928Q8wAAAAd0SU1FB+QCFxQhBRHVJbIAAAGDSURBVDjLhVPpesFAFL2I1oTYQ1CklYVYIrW1pUpRy33/9+lEs0xCvp4fM3MzZ85dA+AhFk9wyYeHJJeIx+AWjynCpzNCNitk0jxJ5ULX+UKyWPLNcjFZyLP3ObFSDb6oVkTJt2r1xq3PRv3JPUrN1p2goNV0NNqiDHchP7eve6ECEXjpXANUqlEEQbGzTamOqemISHSWoXYBesTNXzT6A8QhSyiRHsR5x+gjldKxH3DCx2FkunI4thdKQMsjmCPgXj0FolGFYYAw4WDqtUBEQ8fxzLKQWC6lNIX5wiVobxYaVOgK59tizhAAZoh2lowLSvBcaKphP1UDBOqCmzhnC3UN3pHQVAZskF6aKNqrjsBCHvmFogFSGCRcKK/UIooqDWMcLjV0nWYNP+xeqQGBJW0WSIoQ3e6VvXWiB+bzurXX8v17ef31d/hvaCPHvuYb0noTGkxhs5ZYO99Rllvf3C6VTj6kuEp978x9+XAo783dT3d1J6jY8XRWLhflfDoyv/8vV6UvgYe1izkAAAAASUVORK5CYII=" />
 </svg>

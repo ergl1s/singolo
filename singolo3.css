@@ -22,6 +22,7 @@ footer .wrapper {
   margin: 0 auto;
   padding: 0px 40px;
 }
+
 footer {
   height: 76px;
   background-color: #2d303a;
@@ -44,6 +45,7 @@ footer .list {
 footer .list li {
   margin-left: 8px;
 }
+
 .get-a-quote h2{
   font-size: 30px;
   font-weight: 900;
@@ -63,7 +65,7 @@ footer .list li {
 
 .form-and-aside-grid {
   display: grid; 
-  grid-template: 400px / 619px 300px; 
+  grid-template: 420px / 619px 310px; 
   grid-gap: 20px;
   position: relative;
   top: 62px;
@@ -76,24 +78,67 @@ form {
 
 aside .list {
   list-style: none;
+  position: relative;
+  top: 25px;
+  padding-left: 0px; 
+}
+
+aside .list li{
+  height: 0px;
+  padding-bottom: 21px;
+}
+
+aside .list li:last-child {
+  padding-bottom: 0px; 
+  position: relative;
+  top: 1px;
+}
+
+aside .list a{
+  text-decoration: none;
+  color: #f0d8d9;
+  font-size:12px;
+}
+
+.nav-image {
+  padding-left: 4px;
+  margin-right: 13px;
+  position: relative;
+  top: 1px;
+}
+
+.email-image {
+  margin-right: 11px;
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+
+.phone-image {
+  position: relative;
+  margin-right: 13px;
+  top: 1px;
+  left: 2px;
 }
 
 aside h3 {
   color: #f0d8d9;
   font-size: 18px;
   font-weight: 900;
-  letter-spacing: -0.23px;  
+  letter-spacing: 0.08px;
   position: relative;
-  top: 0px;
+  top: -2px;
+  left: 1px;
 }
 
 .aside-paragraph { 
   color: #f0d8d9;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 400;
-  letter-spacing: -0.23px;  
+  letter-spacing: 0px;  
   position: relative;
-  top: 0px;
+  line-height: 22px;
+  top: 6px;
 }
 
 .copyright-wrapper {
@@ -128,7 +173,41 @@ input::placeholder {
   font-size: 11px;
   letter-spacing: 0.39px;
 }
+
 #textarea {
   height: calc(202px - 2 * 11px);
   padding: 11px 15px;
+  resize: none;
+}
+
+.submit { 
+  width: calc(619px / 4);
+  height: 30px;
+  align-self: center;
+  background-color: #d6564f;
+  border: none;
+  border-radius: 5px;
+  color: #f48c8f;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.submit:hover {
+  cursor: pointer;
+  color: #f0d8d9;
+}
+
+.corrector-3 {
+  letter-spacing: -0.23px;
+}
+
+footer .list img {
+  position: relative;
+  top: 0px;
+  transition: top .1s ease;
+}
+
+footer .list img:hover{ 
+  top: -10px; 
+  cursor: pointer;
 }

@@ -139,6 +139,11 @@
   letter-spacing: -0.18px;
 }
 
+.person:nth-child(1) .social-icons {
+  position: relative; 
+  left: 1px; 
+}
+
 .person:nth-child(2) p {
   letter-spacing: 0.12px;
 }
@@ -160,6 +165,14 @@
 
 .social-icons img{
   margin-right: 4px;
+  position: relative;
+  top: 0px;
+  transition: top .1s ease;
+}
+
+.social-icons img:hover{ 
+  top: -10px; 
+  cursor: pointer;
 }
 
 .corrector-2 {

@@ -1,13 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-        stroke: #666d89;
-        stroke-width: 1px;
-      }
-    </style>
-  </defs>
-  <image id="twitter" x="9" y="10" width="14" height="12" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAuUlEQVQokZWS0RHBQBRFj4wC0oF0IEpQgRLw488MFfDrTwfSAalAdEAFlKAEc817ZiUWOTOZeXP33bebu9uZzTcZkAJnmuTAHshsZQtcgH4CTICjNYWkpmeBtgB20hITvGlttciDuk4pYxWYV8DVpo4jJvUX3cgRdfwYd+mJFy04ubGw718qN4qyhel5bW58CT9Y+rob9Z9D4PDFOA2HK1XdnRh9SNiHaqe3HDycXu2FiJs9sUEjPOABxAYiBQDmOeYAAAAASUVORK5CYII="/>
-  <circle id="Ellipse_2_copy_2" data-name="Ellipse 2 copy 2" class="cls-1" cx="16" cy="16" r="16"/>
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="32px" height="32px">
+<image  x="0px" y="0px" width="32px" height="32px"  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA51BMVEVmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYlmbYn///9eEyQPAAAAS3RSTlMADFeYyOn4IpvvtG45FwcjCIiBFRbPqhgkMuVrMedUCWzQqYnqgJwNIDDfj2AQr5ptQDufvzrrcPkGUH8litEKqBTwszgF8ViZyfpLlnmZAAAAAWJLR0RM928Q8wAAAAd0SU1FB+QCFxEcLtFKVqcAAAFqSURBVDjLhVPpQoJAEB4RikVRPFDUVArwPijySjNNzYP3f59cZNlVoebPzOz3MTcAgcS4OC88PAh8nIvBvTyKSEok5VRKTiYkJKZvYCUjZHPUzWeFjMLiabVQvP6iWFA16pXKlfuclfITMbVqLaQoqFX9GHVVh1DRn+uezhQgQl4Mr0CzGEWQTdytaEGkWA2AJvL7b7U91e64brfXvbzlUBM4ibARZvSRi2XgP0ocDG1CcJHVh1cPd3v+oz0E/s23MYQcx8PfSREjHsZkBROXCskAuTFMZ77dYwgTQphNKQEcSmgzhCAFfAR4UAJOwY+I01fvAuAigzbPjMF1j3hfQ2ZQ1iUCYnA8KDpqBw+x020xOB41NP5Y1vy8LNBMOXrdC6yM6IP59FR9qYfj+vLrYvx3tJFnX6KOtlzdHKa8WmqsrxjmfE3d9dw0lJuIC/F7Y2/zu11+a29+GouQomL7w9E8nczjYc/8/r/SfTmPIONzRwAAAABJRU5ErkJggg==" />
 </svg>
