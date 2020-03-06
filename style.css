@@ -3,6 +3,10 @@
   font-family: "Lato", sans-serif;;
 }
 
+body {
+  height: calc(100vh - 1px);
+}
+
 .wrapper {
   max-width: 1020px;
   margin: 0 auto;
