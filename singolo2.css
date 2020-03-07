@@ -30,6 +30,7 @@
   letter-spacing: -0.23px;  
   position: relative;
   top: 22px;
+  text-align: justify;
 }
 
 .portfolio .wrapper .list {
@@ -124,6 +125,8 @@
   position: relative;
   top: 12px;
   left: -1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .person p {
@@ -131,8 +134,8 @@
   position: relative;
   top: 22px;
   font-size: 12px;
-  letter-spacing: -0.1px;
   line-height: 20px;
+  text-align: justify;
 }
 
 .person:nth-child(1) p {

@@ -228,7 +228,7 @@ nav li>a:hover {
 
 .grid-block {
   display: grid; 
-  grid-template: 20px 70px / 70px 220px;
+  grid-template: 20px 65px / 70px 220px;
   grid-gap: 10px;
 }
 
@@ -264,6 +264,7 @@ nav li>a:hover {
   left: 0px;
   letter-spacing: 0.4px;
   line-height: 30px;
+  text-align: justify;
 }
 
 .corrector-1 {
@@ -281,6 +282,8 @@ nav li>a:hover {
   letter-spacing: -0.1px;
   position: relative;
   top: -2px;
+  overflow: hidden;
+  text-align: justify;
 }
 
 .portfolio .wrapper, .about-us .wrapper {
@@ -309,6 +312,7 @@ nav li>a:hover {
   letter-spacing: -0.23px;  
   position: relative;
   top: 22px;
+  text-align: justify;
 }
 
 .portfolio .wrapper .list {
@@ -403,6 +407,8 @@ nav li>a:hover {
   position: relative;
   top: 12px;
   left: -1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .person p {
@@ -410,8 +416,8 @@ nav li>a:hover {
   position: relative;
   top: 22px;
   font-size: 12px;
-  letter-spacing: -0.1px;
   line-height: 20px;
+  text-align: justify;
 }
 
 .person:nth-child(1) p {
@@ -514,6 +520,7 @@ footer .list li {
   position: relative;
   top: 18px;
   line-height: 30px;
+  text-align: justify;
 }
 
 .form-and-aside-grid {
@@ -550,7 +557,7 @@ aside .list li:last-child {
 aside .list a{
   text-decoration: none;
   color: #f0d8d9;
-  font-size:12px;
+  font-size: 12px;
 }
 
 .nav-image {
@@ -592,6 +599,7 @@ aside h3 {
   position: relative;
   line-height: 22px;
   top: 6px;
+  text-align: justify;
 }
 
 .copyright-wrapper {

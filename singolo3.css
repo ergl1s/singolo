@@ -61,6 +61,7 @@ footer .list li {
   position: relative;
   top: 18px;
   line-height: 30px;
+  text-align: justify;
 }
 
 .form-and-aside-grid {
@@ -97,7 +98,7 @@ aside .list li:last-child {
 aside .list a{
   text-decoration: none;
   color: #f0d8d9;
-  font-size:12px;
+  font-size: 12px;
 }
 
 .nav-image {
@@ -139,6 +140,7 @@ aside h3 {
   position: relative;
   line-height: 22px;
   top: 6px;
+  text-align: justify;
 }
 
 .copyright-wrapper {

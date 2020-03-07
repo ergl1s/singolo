@@ -224,7 +224,7 @@ nav li>a:hover {
 
 .grid-block {
   display: grid; 
-  grid-template: 20px 70px / 70px 220px;
+  grid-template: 20px 65px / 70px 220px;
   grid-gap: 10px;
 }
 
@@ -260,6 +260,7 @@ nav li>a:hover {
   left: 0px;
   letter-spacing: 0.4px;
   line-height: 30px;
+  text-align: justify;
 }
 
 .corrector-1 {
@@ -277,4 +278,6 @@ nav li>a:hover {
   letter-spacing: -0.1px;
   position: relative;
   top: -2px;
+  overflow: hidden;
+  text-align: justify;
 }
