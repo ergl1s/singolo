@@ -619,6 +619,7 @@ input, textarea {
   border-radius: 5px;
   margin-bottom: 16px;
   padding: 0px 15px 1px;
+  color: #f0d8d9;
 }
 
 input::placeholder {
@@ -676,4 +677,29 @@ footer .list img:hover{
 .portfolio .wrapper, .about-us, .get-a-quote, footer {
   position: relative; 
   top: -1px; 
+}
+
+input:focus, #textarea:focus {
+  outline: none;
+  background-color: lightslategray;
+}
+
+input:hover, #textarea:hover {
+  background-color: lightslategray;
+}
+
+input:hover::placeholder, #textarea:hover::placeholder {
+  color: #f0d8d9;
+}
+
+input:focus::placeholder, #textarea:focus::placeholder {
+  color: #f0d8d9;
+}
+
+input:required:valid {
+  background-color: #198a5e;
+}
+
+input, #textarea {
+  transition: all 0.3s ease; 
 }
