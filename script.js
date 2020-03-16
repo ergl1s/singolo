@@ -28,7 +28,46 @@ anchors[0].style.color = "#f06c64";
 anchors.forEach((item, index) => item.addEventListener("click", () => scrollToAnchor(item, index)));
 
 //Slider
+function clickOnChev () {
+  if (sliderBool) {
+    sliderWrapper.style = "background: url(assets/slider.png)";
+    sliderWrapper.parentElement.style.borderColor = "#4d8cf4";
+    phones.forEach(item => item.parentElement.style.display = "none");
+    sliderWrapper.parentElement.style.backgroundColor = "#4d8cf4";
+    sliderBool = false; 
+  }
+  else {
+    sliderWrapper.style = "background: none";
+    sliderWrapper.parentElement.style.backgroundColor = "#f06c64";
+    sliderWrapper.parentElement.style.borderColor = "#ea676b";
+    phones.forEach(item => item.parentElement.style.display = "block");
+    sliderBool = true;
+  }
+}
 
+function clickOnPhone (item) {
+  if(item.disabled) { 
+    item.children[0].style.display = "block";
+    item.disabled = false;
+  }
+  else {
+    item.children[0].style.display = "none";
+    item.disabled = true;
+  }
+}
+
+let chevRight = document.querySelector(".chev-right-container");
+let chevLeft = document.querySelector(".chev-left-container");
+let sliderBool = true;
+chevRight.addEventListener("click", () => clickOnChev());
+chevLeft.addEventListener("click", () => clickOnChev());
+let sliderWrapper = document.querySelector(".slider > div");
+let phones = document.querySelectorAll(".iphone-body");
+
+phones.forEach(item => {
+  item.disabled = false;
+  item.addEventListener("click", () => clickOnPhone(item));
+});
 
 //Portfolio
 function changeTabColor(item) {
