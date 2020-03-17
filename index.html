@@ -163,8 +163,8 @@
           <input type="text" name="name" placeholder="Name (Required)" id="name-input" required>
           <input type="email" name="email" placeholder="Email (Required)" id="email-input"  required>
           <input type="text" name="subject" placeholder="Subject" id="subject-input">
-          <textarea name="describtion" id="textarea" cols="10" rows="30" placeholder="Describe your project in detail..."></textarea>
-          <button type="submit" class="submit">Submit</button>
+          <textarea name="describtion" id="textarea" cols="10" rows="30" placeholder="Describe your project in detail..." maxlength="256"></textarea>
+          <button type="submit" id="submit">Submit</button>
         </form>
         <aside>
           <h3>Contact Information</h3>
@@ -189,6 +189,15 @@
     </ul>
     </div>
   </footer>
+  <div id="message-block" class="message_hidden">
+    <div id="message">
+      <span>The letter was sent</span>
+      <span></span>
+      <span></span>
+      <br>
+      <button id="close-button">OK</button>
+    </div>
+  </div>
 </body>
 <script src="script.js"></script>
 </html>
