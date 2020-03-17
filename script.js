@@ -23,50 +23,37 @@ function scrollToAnchor(event) {
 }
 
 let anchors = document.querySelectorAll('nav > ul > li > a');
-let anchorsList = document.querySelector('nav > ul')
-anchorsList.addEventListener('click', () => scrollToAnchor(event))
+let anchorsList = document.querySelector('nav > ul');
+anchorsList.addEventListener('click', () => scrollToAnchor(event));
+anchors[0].classList.add('anchor_active'); 
 
 //Slider
-function clickOnChev () {
-  if (sliderBool) {
-    sliderWrapper.style = 'background: url(assets/slider.svg)';
-    sliderWrapper.parentElement.style.borderColor = '#648BF0';
-    phones.forEach(item => item.parentElement.style.display = 'none');
-    sliderWrapper.parentElement.style.backgroundColor = '#648BF0';
-    sliderBool = false; 
+function clickOnChev() {
+  if (!event.target.parentElement.classList.contains('wrapper_active')) {
+  event.target.closest('.slider').classList.add('slider_active');
+  event.target.parentElement.classList.add('wrapper_active');
+  phones.forEach(item => item.parentElement.classList.add('hidden'));
   }
   else {
-    sliderWrapper.style = 'background: none';
-    sliderWrapper.parentElement.style.backgroundColor = '#f06c64';
-    sliderWrapper.parentElement.style.borderColor = '#ea676b';
-    phones.forEach(item => item.parentElement.style.display = 'block');
-    sliderBool = true;
+    event.target.closest('.slider').classList.remove('slider_active');
+    event.target.closest('.wrapper').classList.remove('wrapper_active');
+    phones.forEach(item => item.parentElement.classList.remove('hidden'));
   }
 }
 
-function clickOnPhone (item) {
-  if(item.disabled) { 
-    item.children[0].style.display = 'block';
-    item.disabled = false;
+function clickOnPhone(event) {
+  if (!event.target.children[0].classList.contains('hidden')) {
+    event.target.children[0].classList.add('hidden');
   }
   else {
-    item.children[0].style.display = 'none';
-    item.disabled = true;
+    event.target.children[0].classList.remove('hidden');
   }
 }
 
-let chevRight = document.querySelector('.chev-right-container');
-let chevLeft = document.querySelector('.chev-left-container');
-let sliderBool = true;
-chevRight.addEventListener('click', () => clickOnChev());
-chevLeft.addEventListener('click', () => clickOnChev());
-let sliderWrapper = document.querySelector('.slider > div');
+let chevs = document.querySelectorAll('.chev');
+chevs.forEach(item => item.addEventListener('click', () => clickOnChev(event)));
 let phones = document.querySelectorAll('.iphone-body');
-
-phones.forEach(item => {
-  item.disabled = false;
-  item.addEventListener('click', () => clickOnPhone(item));
-});
+phones.forEach(item => item.addEventListener('click', () => clickOnPhone(event)));
 
 //Portfolio
 function changeTabColor(item) {
@@ -132,12 +119,12 @@ function onSubmit() {
   event.preventDefault();
   message.children[1].innerText = document.getElementById('subject-input').value == '' ? 'Without subject' : 'Subject: ' + document.getElementById('subject-input').value;
   message.children[2].innerText = textarea.value == '' ? 'Without description' : 'Description: ' + textarea.value;
-  messageBlock.classList.remove('message_hidden');
+  messageBlock.classList.remove('hidden');
 }
 
 function onCloseBtn() {
   form.reset();
-  messageBlock.classList.add('message_hidden');
+  messageBlock.classList.add('hidden');
 }
 let messageBlock = document.getElementById('message-block');
 let submitBtn = document.getElementById('submit');

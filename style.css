@@ -716,6 +716,15 @@ input, #textarea {
   color: #f06c64;
 }
 
+.slider_active {
+  border-color: #648BF0;
+  background-color:#648BF0;
+}
+
+.wrapper_active {
+  background: url(assets/slider.svg);
+}
+
 #message-block {
   width: 100vw;
   height: 100vh;
@@ -745,7 +754,11 @@ input, #textarea {
   padding: 5px 10px;
 }
 
-#message-block.message_hidden { 
+#message-block.hidden { 
+  display: none; 
+}
+
+.hidden {
   display: none; 
 }
 
