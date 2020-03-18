@@ -725,6 +725,18 @@ input, #textarea {
   background: url(assets/slider.svg);
 }
 
+.portfolio .wrapper .list .tab_active {
+  color: #c5c5c5;
+  border-color: #c5c5c5;
+}
+
+.image_active {
+  border: 5px solid #F06C64;
+  position: relative;
+  left: -5px;
+  top: -5px;
+}
+
 #message-block {
   width: 100vw;
   height: 100vh;

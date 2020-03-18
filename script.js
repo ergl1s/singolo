@@ -49,70 +49,47 @@ function clickOnPhone(event) {
     event.target.children[0].classList.remove('hidden');
   }
 }
-
 let chevs = document.querySelectorAll('.chev');
 chevs.forEach(item => item.addEventListener('click', () => clickOnChev(event)));
 let phones = document.querySelectorAll('.iphone-body');
 phones.forEach(item => item.addEventListener('click', () => clickOnPhone(event)));
 
 //Portfolio
-function changeTabColor(item) {
-  if (item.disabled) return;
-  tabs.forEach(item => {
-    item.disabled = false;
-    item.style.color = '#767e9e';
-    item.style.borderColor = '#666d89';
-  });
+function changeTabColor(event) {
+  if (!event.target.classList.contains('tab_active')) {
+    Array.from(tabsList.children).forEach(item => item.classList.remove('tab_active'));
 
-  item.style.color = '#c5c5c5';
-  item.style.borderColor= '#c5c5c5';
-  item.disabled = true; 
-
-  images.forEach((item, index) => {
-    let current =  index - temp <= 0 ? index - temp + 12 : index - temp;
-    item.src = `assets/image_${current}.svg`
-    item.alt = `image_${current}`;
-    if (item.style.borderWidth == '5px') {
-      item.style.borderWidth = '0px';
-      item.style.left = '0px';
-      item.style.top = '0px';
-    }
-  });
-  temp ++;
-  if (temp == 12) temp = 0;
+    event.target.classList.add('tab_active');
+    Array.from(imagesList.children).forEach((item, index) => {
+      let current =  index - temp <= 0 ? index - temp + 12 : index - temp;
+      item.src = `assets/image_${current}.svg`
+      item.alt = `image_${current}`;
+      if (item.classList.contains('image_active')) {
+        item.classList.remove('image_active');
+      }
+    });
+    temp ++;
+    if (temp == 12) temp = 0;
+  }
 }
 
-function changeImageBorder(item) {
-  if (item.style.borderWidth != '5px') {
-    images.forEach(item => {
-      item.style.borderWidth = '0px';
-      item.style.left = '0px';
-      item.style.top = '0px';
-    });
-    
-    if (item.style.borderColor != '#F06C64') {
-    item.style.border = '5px solid #F06C64';
-    item.style.left = '-5px';
-    item.style.top = '-5px';
-    }
+function changeImageBorder(event) {
+  if (!event.target.classList.contains('image_active')) {
+    Array.from(imagesList.children).forEach(item => item.classList.remove('image_active'));
+    event.target.classList.add('image_active');
   }
   else {
-    item.style.borderWidth = '0px';
-    item.style.left = '0px';
-    item.style.top = '0px';
+    event.target.classList.remove('image_active');
   }
 }
 
-let tabs = document.querySelectorAll('#portfolio > div > ul > li');
+let tabsList = document.querySelector('#portfolio > div > ul');
 let temp = 0; 
-tabs[0].style.color = '#c5c5c5';
-tabs[0].style.borderColor = '#c5c5c5';
-tabs.forEach(item => item.addEventListener('click', () => changeTabColor(item)));
-let images = document.querySelectorAll('#portfolio > div > div > img');
-images.forEach(item => {
-  item.style.position = 'relative';
-  item.addEventListener('click', () => changeImageBorder(item))
-});
+tabsList.children[0].classList.add('tab_active');
+tabsList.addEventListener('click', () => changeTabColor(event));
+
+let imagesList = document.querySelector('#portfolio > div > div');
+imagesList.addEventListener('click', () => changeImageBorder(event));
 
 //Get a Quote
 function onSubmit() {
