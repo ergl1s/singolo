@@ -1,31 +1,23 @@
-//Header
-function scrollToAnchor(event) {
-  if (event.target.tagName == 'A') {
-    anchors.forEach(item => item.classList.remove('anchor_active'));
-    event.target.classList.add('anchor_active');
-    let index = Array.from(anchorsList.children).map(item => item.children[0]).indexOf(event.target);
-    if (index == 0) {
-      window.scrollTo(0, 0);
-    } 
-    else if (index == 1) {
-      window.scrollTo(0, 600);
-    } 
-    else if (index == 2) {
-      window.scrollTo(0, 1100);
-    }
-    else if (index == 3) {
-      window.scrollTo(0, 1967);
-    }
-    else if (index == 4) {
-      window.scrollTo(0, 2703);
-    }
-  }
-}
+//Window 
+window.onload = onScroll;
+window.addEventListener('scroll', onScroll);
 
-let anchors = document.querySelectorAll('nav > ul > li > a');
-let anchorsList = document.querySelector('nav > ul');
-anchorsList.addEventListener('click', () => scrollToAnchor(event));
-anchors[0].classList.add('anchor_active'); 
+function onScroll() {
+  let ids = document.querySelectorAll('.id_active');
+  let anchors = document.querySelectorAll('nav > ul > li > a');
+  let HEADER_HEIGHT = ids[0].offsetHeight;
+  let currentPosition = window.pageYOffset;
+  ids.forEach(id => {
+    if (id.offsetTop - HEADER_HEIGHT <= currentPosition && (id.offsetTop + id.offsetHeight) > currentPosition) {
+      anchors.forEach(anchor => {
+        anchor.classList.remove('anchor_active');
+        if (id.getAttribute('id') === anchor.getAttribute('href').substring(1)) {
+          anchor.classList.add('anchor_active');
+        }
+      })
+    };
+  }) 
+}
 
 //Slider
 function clickOnChev() {
@@ -42,11 +34,11 @@ function clickOnChev() {
 }
 
 function clickOnPhone(event) {
-  if (!event.target.children[0].classList.contains('hidden')) {
-    event.target.children[0].classList.add('hidden');
+  if (!event.target.children[0].classList.contains('hidden-opacity')) {
+    event.target.children[0].classList.add('hidden-opacity');
   }
   else {
-    event.target.children[0].classList.remove('hidden');
+    event.target.children[0].classList.remove('hidden-opacity');
   }
 }
 let chevs = document.querySelectorAll('.chev');
@@ -58,18 +50,10 @@ phones.forEach(item => item.addEventListener('click', () => clickOnPhone(event))
 function changeTabColor(event) {
   if (!event.target.classList.contains('tab_active')) {
     Array.from(tabsList.children).forEach(item => item.classList.remove('tab_active'));
-
     event.target.classList.add('tab_active');
-    Array.from(imagesList.children).forEach((item, index) => {
-      let current =  index - temp <= 0 ? index - temp + 12 : index - temp;
-      item.src = `assets/image_${current}.svg`
-      item.alt = `image_${current}`;
-      if (item.classList.contains('image_active')) {
-        item.classList.remove('image_active');
-      }
-    });
-    temp ++;
-    if (temp == 12) temp = 0;
+    let temp = imagesList.children[0].cloneNode();
+    imagesList.removeChild(imagesList.children[0]);
+    imagesList.insertBefore(temp, imagesList.children[11]);
   }
 }
 
@@ -87,7 +71,6 @@ let tabsList = document.querySelector('#portfolio > div > ul');
 let temp = 0; 
 tabsList.children[0].classList.add('tab_active');
 tabsList.addEventListener('click', () => changeTabColor(event));
-
 let imagesList = document.querySelector('#portfolio > div > div');
 imagesList.addEventListener('click', () => changeImageBorder(event));
 
