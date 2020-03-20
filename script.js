@@ -20,11 +20,11 @@ function onScroll() {
 }
 
 //Slider
-function clickOnChev() {
+function clickOnChev(event) {
   if (!event.target.parentElement.classList.contains('wrapper_active')) {
-  event.target.closest('.slider').classList.add('slider_active');
-  event.target.parentElement.classList.add('wrapper_active');
-  phones.forEach(item => item.parentElement.classList.add('hidden'));
+    event.target.closest('.slider').classList.add('slider_active');
+    event.target.parentElement.classList.add('wrapper_active');
+    phones.forEach(item => item.parentElement.classList.add('hidden'));
   }
   else {
     event.target.closest('.slider').classList.remove('slider_active');
@@ -41,8 +41,9 @@ function clickOnPhone(event) {
     event.target.parentElement.classList.remove('hidden-opacity');
   }
 }
+let phones = document.querySelectorAll('.iphone-body');
 let chevs = document.querySelectorAll('.chev');
-chevs.forEach(item => item.addEventListener('click', () => clickOnChev(event)));
+chevs.forEach(item => item.addEventListener('click', clickOnChev));
 let phonesButtons = document.querySelectorAll('.iphone-button');
 phonesButtons.forEach(item => item.addEventListener('click', clickOnPhone));
 
