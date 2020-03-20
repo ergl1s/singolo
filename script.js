@@ -34,17 +34,17 @@ function clickOnChev() {
 }
 
 function clickOnPhone(event) {
-  if (!event.target.children[0].classList.contains('hidden-opacity')) {
-    event.target.children[0].classList.add('hidden-opacity');
+  if (!event.target.parentElement.classList.contains('hidden-opacity')) {
+    event.target.parentElement.classList.add('hidden-opacity');
   }
   else {
-    event.target.children[0].classList.remove('hidden-opacity');
+    event.target.parentElement.classList.remove('hidden-opacity');
   }
 }
 let chevs = document.querySelectorAll('.chev');
 chevs.forEach(item => item.addEventListener('click', () => clickOnChev(event)));
-let phones = document.querySelectorAll('.iphone-body');
-phones.forEach(item => item.addEventListener('click', () => clickOnPhone(event)));
+let phonesButtons = document.querySelectorAll('.iphone-button');
+phonesButtons.forEach(item => item.addEventListener('click', clickOnPhone));
 
 //Portfolio
 function changeTabColor(event) {

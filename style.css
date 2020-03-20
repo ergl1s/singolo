@@ -180,6 +180,22 @@ nav li>a:hover {
   background-image: url(assets/phonebgvert.png); 
 }
 
+.iphone-button {
+  width: 41.88px;
+  height: 41.88px;
+  position: relative;
+  top: 346px;
+  left: 76px;
+}
+
+.iphone-horizontal .iphone-button {
+  top: -49px;
+}
+
+.iphone-button:hover {
+  cursor:pointer; 
+}
+
 .chev-left-container {
   width: 90px;
   height: 600px;
