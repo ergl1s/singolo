@@ -110,12 +110,14 @@ nav li>a:hover {
   height: 594px; 
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
+  transition: background-color 1s, border-color 1s;
 }
 
 .slider .wrapper{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 
 .iphone-container {
@@ -754,6 +756,16 @@ input, #textarea {
 
 .wrapper_active {
   background: url(assets/slider.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.wrapper_active_left {
+  background-position-x: -110%; 
+}
+
+.wrapper_active_right {
+  background-position-x: 205%; 
 }
 
 .portfolio .wrapper .list .tab_active {

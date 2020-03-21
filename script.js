@@ -20,19 +20,6 @@ function onScroll() {
 }
 
 //Slider
-function clickOnChev(event) {
-  if (!event.target.parentElement.classList.contains('wrapper_active')) {
-    event.target.closest('.slider').classList.add('slider_active');
-    event.target.parentElement.classList.add('wrapper_active');
-    phones.forEach(item => item.parentElement.classList.add('hidden'));
-  }
-  else {
-    event.target.closest('.slider').classList.remove('slider_active');
-    event.target.closest('.wrapper').classList.remove('wrapper_active');
-    phones.forEach(item => item.parentElement.classList.remove('hidden'));
-  }
-}
-
 function clickOnPhone(event) {
   if (!event.target.parentElement.classList.contains('hidden-opacity')) {
     event.target.parentElement.classList.add('hidden-opacity');
@@ -41,9 +28,110 @@ function clickOnPhone(event) {
     event.target.parentElement.classList.remove('hidden-opacity');
   }
 }
-let phones = document.querySelectorAll('.iphone-body');
-let chevs = document.querySelectorAll('.chev');
-chevs.forEach(item => item.addEventListener('click', clickOnChev));
+
+function onChevLeft() {
+  if(slider.classList.contains('slider_active')) {
+    slider.classList.remove('slider_active');
+    let leftPos = phonesLeft;
+    let bgPos = 50;
+    setTimeout(function an() {
+      if (leftPos <= -20) {
+      phones.forEach(phone => {
+          phone.style.left = `${leftPos}%`;
+      });
+    }
+      else {
+        phones.forEach(phone => {
+          phone.style.left = ``;
+        });
+      }
+      if (bgPos <= bgPosRight)
+        sliderWrapper.style.backgroundPosition = `${bgPos}% 50%`;
+      if(leftPos < -20 || bgPos < bgPosRight) setTimeout(an, 30);
+      leftPos += 3;
+      bgPos += 4;
+    }, 5);
+    console.log(phones);
+  }
+  else {
+    sliderWrapper.classList.add('wrapper_active');
+    sliderWrapper.style.backgroundPosition = `${bgPosLeft}% 50%`;
+    slider.classList.add('slider_active');
+    let leftPos = -10;
+    let bgPos = bgPosLeft;
+    setTimeout(function an() {
+      if (leftPos <= phonesRight) {
+        phones.forEach(phone => {
+            phone.style.left = `${leftPos}%`;
+        });
+      }
+      if (bgPos <= 50) 
+        sliderWrapper.style.backgroundPosition = `${bgPos}% 50%`;
+      if(leftPos < phonesRight || bgPos < 50) setTimeout(an, 30);
+      leftPos += 3;
+      bgPos += 4;
+    }, 5);
+  }
+}
+
+function onChevRight() {
+  if(slider.classList.contains('slider_active')) {
+    slider.classList.remove('slider_active');
+    let leftPos = phonesRight;
+    let bgPos = 50;
+    setTimeout(function an() {
+      if (leftPos > -5) {
+      phones.forEach(phone => {
+          phone.style.left = `${leftPos}%`;
+      });
+      }
+      else {
+        phones.forEach(phone => {
+          phone.style.left = ``;
+        });
+      }
+      if (bgPos > bgPosLeft)
+        sliderWrapper.style.backgroundPosition = `${bgPos}% 50%`;
+      if(leftPos > -15 || bgPos > bgPosLeft) setTimeout(an, 30);
+      leftPos -= 3;
+      bgPos -= 3;
+    }, 5);
+    console.log(phones);
+  }
+  else {
+    sliderWrapper.classList.add('wrapper_active');
+    sliderWrapper.style.backgroundPosition = `${bgPosLeft}% 50%`;
+    slider.classList.add('slider_active');
+    let leftPos = -10;
+    let bgPos = bgPosRight;
+    setTimeout(function an() {
+      if (leftPos >= phonesLeft) {
+        phones.forEach(phone => {
+            phone.style.left = `${leftPos}%`;
+        });
+      }
+      if (bgPos >= 50) 
+        sliderWrapper.style.backgroundPosition = `${bgPos}% 50%`;
+      if(leftPos >= phonesLeft || bgPos >= 50) setTimeout(an, 30);
+      leftPos -= 3;
+      bgPos -= 3;
+    }, 5);
+  }
+}
+
+let phonesRight = 120;
+let phonesLeft = -135;
+let bgPosLeft = -120;
+let bgPosRight =  210; 
+let slider = document.querySelector('.slider');
+let sliderWrapper = document.querySelector('.slider .wrapper');
+let phones = document.querySelectorAll('.iphone');
+let chevLeft = document.querySelector('.chev-left-container');
+let chevRight = document.querySelector('.chev-right-container');
+
+chevLeft.addEventListener('click', onChevLeft);
+chevRight.addEventListener('click', onChevRight);
+
 let phonesButtons = document.querySelectorAll('.iphone-button');
 phonesButtons.forEach(item => item.addEventListener('click', clickOnPhone));
 
