@@ -30,99 +30,119 @@ function clickOnPhone(event) {
 }
 
 function onChevLeft() {
+  if (animationFlag) return;
   if(slider.classList.contains('slider_active')) {
     slider.classList.remove('slider_active');
-    let leftPos = phonesLeft;
-    let bgPos = 50;
-    setTimeout(function an() {
-      if (leftPos <= -20) {
-      phones.forEach(phone => {
-          phone.style.left = `${leftPos}%`;
-      });
-    }
-      else {
-        phones.forEach(phone => {
-          phone.style.left = ``;
-        });
+    let leftPos = 10; 
+    let bgPos = 52;
+    setTimeout(function go() {
+      animationFlag = true;
+      if (leftPos <= phonesShift) {
+        phones[0].style.left = `${leftPos - phonesShift + phoneStartLeft}px`;
+        phones[1].style.left = `${leftPos - phonesShift + phoneStartRight}px`;
       }
       if (bgPos <= bgPosRight)
         sliderWrapper.style.backgroundPosition = `${bgPos}% 50%`;
-      if(leftPos < -20 || bgPos < bgPosRight) setTimeout(an, 30);
-      leftPos += 3;
-      bgPos += 4;
+      if(leftPos <= phonesShift || bgPos <= bgPosRight) 
+        setTimeout(go, 5);
+      else {
+        phones[0].style.left = `${phoneStartLeft}px`;
+        phones[1].style.left = `${phoneStartRight}px`;
+        sliderWrapper.style.backgroundPosition = `${bgPosRight}% 50%`; 
+        animationFlag = false;
+      }
+      leftPos += 10;
+      bgPos += 2;
     }, 5);
-    console.log(phones);
   }
   else {
     sliderWrapper.classList.add('wrapper_active');
     sliderWrapper.style.backgroundPosition = `${bgPosLeft}% 50%`;
     slider.classList.add('slider_active');
-    let leftPos = -10;
-    let bgPos = bgPosLeft;
-    setTimeout(function an() {
-      if (leftPos <= phonesRight) {
-        phones.forEach(phone => {
-            phone.style.left = `${leftPos}%`;
-        });
+    let leftPos = 10;
+    let bgPos = bgPosLeft - 36;
+    setTimeout(function go() {
+      animationFlag = true;
+      if (leftPos <= phonesShift) {
+        phones[0].style.left = `${phoneStartLeft + leftPos}px`;
+        phones[1].style.left = `${phoneStartRight + leftPos}px`;
       }
       if (bgPos <= 50) 
         sliderWrapper.style.backgroundPosition = `${bgPos}% 50%`;
-      if(leftPos < phonesRight || bgPos < 50) setTimeout(an, 30);
-      leftPos += 3;
-      bgPos += 4;
+      if(leftPos <= phonesShift || bgPos <= 50) 
+        setTimeout(go, 5);
+      else {
+        sliderWrapper.style.backgroundPosition = `${50}% 50%`;
+        phones[0].style.left = `${phoneStartLeft + phonesShift}px`;
+        phones[1].style.left = `${phoneStartRight + phonesShift}px`;
+        animationFlag = false;
+      }
+      leftPos += 10;
+      bgPos += 2;
     }, 5);
   }
 }
 
 function onChevRight() {
+  if(animationFlag) return;
   if(slider.classList.contains('slider_active')) {
     slider.classList.remove('slider_active');
-    let leftPos = phonesRight;
-    let bgPos = 50;
-    setTimeout(function an() {
-      if (leftPos > -5) {
-      phones.forEach(phone => {
-          phone.style.left = `${leftPos}%`;
-      });
+    let leftPos = 10; 
+    let bgPos = 48;
+    setTimeout(function go() {
+      animationFlag = true;
+      if (leftPos <= phonesShift) {
+        phones[0].style.left = `${phonesShift - leftPos + phoneStartLeft}px`;
+        phones[1].style.left = `${phonesShift - leftPos + phoneStartRight}px`;
       }
-      else {
-        phones.forEach(phone => {
-          phone.style.left = ``;
-        });
-      }
-      if (bgPos > bgPosLeft)
+      if (bgPos >= bgPosLeft)
         sliderWrapper.style.backgroundPosition = `${bgPos}% 50%`;
-      if(leftPos > -15 || bgPos > bgPosLeft) setTimeout(an, 30);
-      leftPos -= 3;
-      bgPos -= 3;
+      if(leftPos <= phonesShift || bgPos >= bgPosLeft) 
+        setTimeout(go, 5);
+      else {
+        phones[0].style.left = `${phoneStartLeft}px`;
+        phones[1].style.left = `${phoneStartRight}px`;
+        sliderWrapper.style.backgroundPosition = `${bgPosLeft}% 50%`; 
+        animationFlag = false;
+      }
+      leftPos += 10;
+      bgPos -= 2;
     }, 5);
-    console.log(phones);
   }
   else {
     sliderWrapper.classList.add('wrapper_active');
-    sliderWrapper.style.backgroundPosition = `${bgPosLeft}% 50%`;
+    sliderWrapper.style.backgroundPosition = `${bgPosRight}% 50%`;
     slider.classList.add('slider_active');
-    let leftPos = -10;
-    let bgPos = bgPosRight;
-    setTimeout(function an() {
-      if (leftPos >= phonesLeft) {
-        phones.forEach(phone => {
-            phone.style.left = `${leftPos}%`;
-        });
+    let leftPos = phonesShift - 10;
+    let bgPos = bgPosRight + 36;
+    setTimeout(function go() {
+      animationFlag = true;
+      if (leftPos > 0) {
+        phones[0].style.left = `${phoneStartLeft - phonesShift + leftPos}px`;
+        phones[1].style.left = `${phoneStartRight - phonesShift + leftPos}px`;
       }
       if (bgPos >= 50) 
         sliderWrapper.style.backgroundPosition = `${bgPos}% 50%`;
-      if(leftPos >= phonesLeft || bgPos >= 50) setTimeout(an, 30);
-      leftPos -= 3;
-      bgPos -= 3;
+      if(leftPos > 0 || bgPos >= 50) 
+        setTimeout(go, 5);
+      else {
+        sliderWrapper.style.backgroundPosition = `${50}% 50%`;
+        phones[0].style.left = `${phoneStartLeft - phonesShift}px`;
+        phones[1].style.left = `${phoneStartRight - phonesShift}px`; 
+        animationFlag = false;
+      }
+      leftPos -= 10;
+      bgPos -= 2;
     }, 5);
   }
 }
 
-let phonesRight = 120;
-let phonesLeft = -135;
-let bgPosLeft = -120;
-let bgPosRight =  210; 
+let animationFlag = false; 
+let phoneStartLeft = 2;
+let phoneStartRight = -124; 
+let phonesShift = 915;
+let bgPosLeft = -105;
+let bgPosRight =  205; 
 let slider = document.querySelector('.slider');
 let sliderWrapper = document.querySelector('.slider .wrapper');
 let phones = document.querySelectorAll('.iphone');
@@ -184,4 +204,4 @@ submitBtn.addEventListener('click', () => {
   if (form.checkValidity())
     onSubmit(event);
 });
-closeBtn.addEventListener('click', () => onCloseBtn())
+closeBtn.addEventListener('click', () => onCloseBtn());
