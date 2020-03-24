@@ -188,6 +188,7 @@ nav li>a:hover {
   position: relative;
   top: 346px;
   left: 76px;
+  border-radius: 50%;
 }
 
 .iphone-horizontal .iphone-button {
@@ -569,7 +570,7 @@ footer .list li {
 
 .form-and-aside-grid {
   display: grid; 
-  grid-template: 420px / 619px 310px; 
+  grid-template: 400px / 619px 310px; 
   grid-gap: 20px;
   position: relative;
   top: 62px;
@@ -681,7 +682,7 @@ input::placeholder {
 }
 
 #textarea {
-  height: calc(202px - 2 * 11px);
+  height: calc(159px - 2 * 11px);
   padding: 11px 15px;
   resize: none;
 }
@@ -844,4 +845,152 @@ input, #textarea {
 
 #close-button:focus {
   outline: none;
+}
+
+@media (max-width: 1019px) and (min-width: 768px) {
+  .services {
+    height: auto; 
+  }
+
+  .services .wrapper {
+    width: calc(100% - 80px);
+  }
+
+  .services p {
+    margin-top: 32px;
+    margin-bottom: 20px;
+  }
+
+  .grid-wrapper {
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    grid-column-gap: 3.125vw;
+    padding-bottom: 30px;
+  }
+
+  .portfolio {
+    height: auto;
+  }
+
+  .portfolio .wrapper {
+    padding-bottom: 80px; 
+  }
+
+  .portfolio-image{
+    width: 100%;
+  }
+
+  .images {
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+  }
+
+  .about-us {
+    height: auto;
+  }
+
+  .persons-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 14.6px;
+    padding-bottom: 80px;
+  }
+
+  .persons-photo{
+    width: 100%;
+  }
+
+  .person p {
+    height: 50px;
+  }
+
+  .get-a-quote {
+    height: auto;
+  }
+
+  .form-and-aside-grid {
+    margin-top: 40px;
+    top: 0px;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  input, textarea {
+    width: calc(100% - 30px);
+  }
+}
+
+@media (max-width: 767px) and (min-width: 375px) {
+  .singolo {
+    font-size: 28px;
+    left: 0px;
+  }
+
+  nav>ul {
+    display: none;
+  }
+
+  header .wrapper {
+    justify-content: center;
+  }
+
+  .services {
+    height: auto; 
+  }
+
+  .grid-wrapper {
+    grid-template: repeat(6, 1fr)/ 1fr;
+  }
+  
+  .portfolio .portfolio-image:nth-child(n+9){
+    display: none;
+  }
+
+  .portfolio {
+    height: auto;
+  }
+
+  .portfolio .wrapper {
+    padding-bottom: 50px; 
+  }
+
+  .portfolio-image{
+    width: 100%;
+  }
+  
+  .images {
+    grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+  }
+
+  .about-us {
+    height: auto;
+  }
+
+  .persons-wrapper {
+    grid-template: repeat(3, 1fr) / 1fr;
+    grid-gap: 70px;
+    padding-bottom: 120px;
+  }
+
+  .persons-photo{
+    width: 100%;
+  }
+
+  .person p {
+    height: 50px;
+  }
+
+  .form-and-aside-grid {
+    margin-top: 40px;
+    top: 0px;
+    grid-template: 3fr 2fr / 1fr;
+  }
+
+  input, textarea {
+    width: calc(100% - 30px);
+  }
+
+  .get-a-quote {
+    height: auto;
+  }
+}
+
+@media (max-width: 374px) {
+
 }

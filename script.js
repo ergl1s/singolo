@@ -167,12 +167,14 @@ function changeTabColor(event) {
 }
 
 function changeImageBorder(event) {
-  if (!event.target.classList.contains('image_active')) {
-    Array.from(imagesList.children).forEach(item => item.classList.remove('image_active'));
-    event.target.classList.add('image_active');
-  }
-  else {
-    event.target.classList.remove('image_active');
+  if (event.target.classList.contains('portfolio-image')) {
+    if (!event.target.classList.contains('image_active')) {
+      Array.from(imagesList.children).forEach(item => item.classList.remove('image_active'));
+      event.target.classList.add('image_active');
+    }
+    else {
+      event.target.classList.remove('image_active');
+    }
   }
 }
 
