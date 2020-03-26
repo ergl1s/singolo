@@ -847,7 +847,7 @@ input, #textarea {
   outline: none;
 }
 
-@media (max-width: 1019px) and (min-width: 768px) {
+@media (max-width: 1019px) {
   .services {
     height: auto; 
   }
@@ -916,7 +916,7 @@ input, #textarea {
   }
 }
 
-@media (max-width: 767px) and (min-width: 375px) {
+@media (max-width: 767px) {
   .singolo {
     font-size: 28px;
     left: 0px;
@@ -934,8 +934,22 @@ input, #textarea {
     height: auto; 
   }
 
+  .services p {
+    margin-top: 32px;
+    margin-bottom: 20px;
+  }
+
+  .services .wrapper {
+    width: calc(100% - 80px);
+  }
+
   .grid-wrapper {
     grid-template: repeat(6, 1fr)/ 1fr;
+    padding-bottom: 0px;
+  }
+
+  .grid-block {
+    margin: auto;
   }
   
   .portfolio .portfolio-image:nth-child(n+9){
