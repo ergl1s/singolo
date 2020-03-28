@@ -7,13 +7,95 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  height: 3528px;
-}
-
 .wrapper {
   max-width: 1020px;
   margin: 0 auto;
+}
+
+.mobile-menu-bg {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #0005;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 0.5s; 
+}
+
+.mobile-menu-wrapper { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 0vw;
+  transition: width 0.5s;
+  overflow: hidden;
+  z-index: 2;
+  background-color: #2D303A;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-menu-wrapper h1 {
+  position: absolute;
+  top: 25px;
+  left: 65px;
+}
+
+.mobile-menu-wrapper_active {
+  width: 74vw;
+}
+
+.mobile-menu-wrapper nav ul {
+  padding-left: 30px;
+  height: 260px;
+  justify-content: space-between;
+}
+
+.mobile-menu-wrapper nav>ul {
+  flex-direction: column;
+}
+
+.mobile-menu-wrapper nav ul li {
+  padding: 0px;
+  margin: 0px;
+  left: 0px;
+  top: 0px;
+}
+
+.mobile-menu-wrapper nav ul li a {
+  font-size: 22px;
+}
+
+.mobile-menu-wrapper li::before {
+  display: none;
+}
+
+.burger-button { 
+  position: absolute;
+  left: 10px;
+  padding: 10px;
+  display: none;
+  z-index: 2;
+  width: 25px;
+  height: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.burger-button div {
+  border-radius: 1px;
+  height: 2px; 
+  background-color: #fff;
+}
+
+.burger-button_active {
+  transform: rotate(-90deg);
 }
 
 header {
@@ -712,11 +794,6 @@ input::placeholder {
   letter-spacing: -0.23px;
 }
 
-.portfolio .wrapper, .about-us, .get-a-quote, footer {
-  position: relative; 
-  top: -1px; 
-}
-
 input:focus, #textarea:focus {
   outline: none;
   background-color: lightslategray;
@@ -806,8 +883,18 @@ input, #textarea {
   flex-direction: column;
 }
 
-#message span{
+#message span {
+  height: 34px;
+  overflow: hidden;
   padding: 5px 10px;
+}
+
+#message span:nth-child(1) {
+  height: 14px;
+}
+
+#message span:nth-child(3) {
+  height: 74px;
 }
 
 #message-block.hidden { 
@@ -836,6 +923,8 @@ input, #textarea {
   font-weight: 400;
   font-size: 18px;
   align-self: center;
+  margin-bottom: 20px;
+  margin-top: -50px;
 }
 
 #close-button:hover {
@@ -952,6 +1041,10 @@ input, #textarea {
 }
 
 @media (max-width: 767px) {
+  .burger-button {
+    display: flex;
+  }
+  
   header {
     height: 71px;
     border: none;
@@ -962,11 +1055,11 @@ input, #textarea {
   }
 
   .singolo {
-    font-size: 28px;
+    font-size: 20px;
     left: 0px;
   }
 
-  nav > ul {
+  .wrapper nav > ul {
     display: none;
   }
 
