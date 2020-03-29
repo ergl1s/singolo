@@ -1310,6 +1310,18 @@ input, #textarea {
     background-size: 48vw;
   }
 
+  .chev-left-container {
+    margin-right: 1vw; 
+  }
+
+  .chev-right-container {
+    margin-left: 1vw;
+  }
+
+  .chev {
+    width: 8vw;
+  }
+
   .grid-block {
     grid-template: 20px 65px / 70px 55vw;
   }
