@@ -128,7 +128,6 @@ function onChevLeft() {
     }, 5);
   }
   else {
-    sliderWrapper.classList.add('wrapper_active');
     sliderWrapper.style.backgroundPosition = `${bgPosLeft}% 50%`;
     slider.classList.add('slider_active');
     let leftPos = leftPosBoost;
@@ -183,7 +182,6 @@ function onChevRight() {
     }, 5);
   }
   else {
-    sliderWrapper.classList.add('wrapper_active');
     sliderWrapper.style.backgroundPosition = `${bgPosRight}% 50%`;
     slider.classList.add('slider_active');
     let leftPos = phonesShift - 10;

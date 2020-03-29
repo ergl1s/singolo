@@ -200,6 +200,9 @@ nav li>a:hover {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  background: url(assets/slider.svg);
+  background-repeat: no-repeat;
+  background-position: 205% 50%;
 }
 
 .iphone-container {
@@ -832,20 +835,6 @@ input, #textarea {
   background-color:#648BF0;
 }
 
-.wrapper_active {
-  background: url(assets/slider.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-
-.wrapper_active_left {
-  background-position-x: -110%; 
-}
-
-.wrapper_active_right {
-  background-position-x: 205%; 
-}
-
 .portfolio .wrapper .list .tab_active {
   color: #c5c5c5;
   border-color: #c5c5c5;
@@ -1320,7 +1309,7 @@ input, #textarea {
   .slider .wrapper { 
     background-size: 48vw;
   }
-  
+
   .grid-block {
     grid-template: 20px 65px / 70px 55vw;
   }
