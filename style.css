@@ -926,6 +926,10 @@ input, #textarea {
 }
 
 @media (max-width: 1019px) {
+  #contact.id_active, #about-us.id_active {
+    scroll-margin-top: 94px;
+  }
+
   .slider {
     height: 444px;
   }
@@ -1115,9 +1119,13 @@ input, #textarea {
     height: 71px;
     border: none;
   }
-  
+
   .id_active {
     scroll-margin-top: 71px;
+  }
+
+  #contact.id_active, #about-us.id_active {
+    scroll-margin-top: 70px;
   }
 
   .singolo {
