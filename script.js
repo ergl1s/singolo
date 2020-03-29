@@ -83,7 +83,7 @@ const checkWidth = () => {
     bgAdditionStart = 30;
   }
   else {
-    leftPosBoost = 8;
+    leftPosBoost = 6;
     phonesShift = 530;
     bgAdditionStart = 0;
   }
