@@ -937,6 +937,83 @@ input, #textarea {
 }
 
 @media (max-width: 1019px) {
+  .slider {
+    height: 444px;
+  }
+
+  .iphone-container {
+    width: 615px;
+  }
+
+  .iphone {
+    width: 180px;
+    height: 364px; 
+  }
+
+  .iphone-shadow {
+    width: 180px;
+    height: 364px;
+    top: 0;
+    left: 0;
+    background-size: cover;
+  }
+
+  .iphone-horizontal .iphone-shadow {
+    top: -30px;
+  }
+
+  .iphone-body {
+    position: absolute;
+    width: 162px;
+    height: 344px;
+    top: 0px;
+    left: -1px;
+    background-size: cover;
+  }
+
+  .iphone-screen, .iphone-horizontal .iphone-screen {
+    width: 144px;
+    height: 251px;
+    top: 49px;
+    left: 9px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: cover;
+  }
+
+  .iphone-button {
+    width: 32px;
+    height: 32px;
+    top: 258px;
+    left: 56px;
+  }
+
+  .iphone-horizontal .iphone-button {
+    top: -39px;
+  }
+
+  .chev {
+    width: 70px;
+    height: 450px;
+  }
+
+  .chev-left-container {
+    margin-right: 12px; 
+  }
+
+  .chev-right-container {
+    margin-left: 12px;
+  }
+
+  .chev-right, .chev-left {
+    top: calc(100% / 2 - 19px);
+    left: calc(100% / 2 - 7px);
+  }
+
+  .slider .wrapper { 
+    background-size: 360px;
+  }
+
   .services {
     height: auto; 
   }
@@ -1067,6 +1144,83 @@ input, #textarea {
     justify-content: center;
   }
 
+  .slider {
+    height: 214px;
+  }
+
+  .iphone-container {
+    width: 295px;
+  }
+
+  .iphone {
+    width: 88px;
+    height: 178px; 
+  }
+
+  .iphone-shadow {
+    width: 88px;
+    height: 178px;
+    top: 0;
+    left: 0;
+    background-size: cover;
+  }
+
+  .iphone-horizontal .iphone-shadow {
+    top: -77px;
+  }
+
+  .iphone-body {
+    position: absolute;
+    width: 79px;
+    height: 168px;
+    top: 0px;
+    left: -1px;
+    background-size: cover;
+  }
+
+  .iphone-screen, .iphone-horizontal .iphone-screen {
+    width: 71px;
+    height: 124px;
+    top: 23px;
+    left: 4px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: cover;
+  }
+
+  .iphone-button {
+    width: 15px;
+    height: 15px;
+    top: 127px;
+    left: 28px;
+  }
+
+  .iphone-horizontal .iphone-button {
+    top: -18px;
+  }
+
+  .chev {
+    width: 35px;
+    height: 220px;
+  }
+
+  .chev-left-container {
+    margin-right: 5px; 
+  }
+
+  .chev-right-container {
+    margin-left: 5px;
+  }
+
+  .chev-right, .chev-left {
+    top: calc(100% / 2 - 19px);
+    left: calc(100% / 2 - 8px);
+  }
+
+  .slider .wrapper { 
+    background-size: 180px;
+  }
+
   .grid-wrapper {
     grid-template: repeat(6, 1fr)/ 1fr;
     padding-bottom: 0px;
@@ -1163,6 +1317,10 @@ input, #textarea {
 }
 
 @media (max-width: 374px) {
+  .slider .wrapper { 
+    background-size: 48vw;
+  }
+  
   .grid-block {
     grid-template: 20px 65px / 70px 55vw;
   }

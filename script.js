@@ -70,11 +70,42 @@ function clickOnPhone(event) {
   }
 }
 
+const checkWidth = () => { 
+  let curWidth = parseInt(window.innerWidth); 
+  if (curWidth >= 1020) {
+    leftPosBoost = 10;
+    phonesShift = 915;
+    bgAdditionStart = 36;
+  }
+  else if(curWidth >= 768) {
+    leftPosBoost = 10;
+    phonesShift = 820;
+    bgAdditionStart = 30;
+  }
+  else {
+    leftPosBoost = 8;
+    phonesShift = 530;
+    bgAdditionStart = 0;
+  }
+}
+
+const correctPhones = () => {
+  checkWidth();
+  if(window.getComputedStyle(phones[0]).left != `${phoneStartLeft}px`) {
+  phones[0].style.left = `${phoneStartLeft + phonesShift}px`;
+  phones[1].style.left = `${phoneStartRight + phonesShift}px`;
+  }
+  else {
+    sliderWrapper.style.backgroundPosition = `${bgPosRight}% 50%`;
+  }
+}
+
 function onChevLeft() {
+  checkWidth();
   if (animationFlag) return;
   if(slider.classList.contains('slider_active')) {
     slider.classList.remove('slider_active');
-    let leftPos = 10; 
+    let leftPos = leftPosBoost; 
     let bgPos = 52;
     setTimeout(function go() {
       animationFlag = true;
@@ -92,7 +123,7 @@ function onChevLeft() {
         sliderWrapper.style.backgroundPosition = `${bgPosRight}% 50%`; 
         animationFlag = false;
       }
-      leftPos += 10;
+      leftPos += leftPosBoost;
       bgPos += 2;
     }, 5);
   }
@@ -100,10 +131,10 @@ function onChevLeft() {
     sliderWrapper.classList.add('wrapper_active');
     sliderWrapper.style.backgroundPosition = `${bgPosLeft}% 50%`;
     slider.classList.add('slider_active');
-    let leftPos = 10;
-    let bgPos = bgPosLeft - 36;
+    let leftPos = leftPosBoost;
+    let bgPos = bgPosLeft - bgAdditionStart;
+    animationFlag = true;
     setTimeout(function go() {
-      animationFlag = true;
       if (leftPos <= phonesShift) {
         phones[0].style.left = `${phoneStartLeft + leftPos}px`;
         phones[1].style.left = `${phoneStartRight + leftPos}px`;
@@ -118,20 +149,21 @@ function onChevLeft() {
         phones[1].style.left = `${phoneStartRight + phonesShift}px`;
         animationFlag = false;
       }
-      leftPos += 10;
+      leftPos += leftPosBoost;
       bgPos += 2;
     }, 5);
   }
 }
 
 function onChevRight() {
+  checkWidth();
   if(animationFlag) return;
   if(slider.classList.contains('slider_active')) {
     slider.classList.remove('slider_active');
-    let leftPos = 10; 
+    let leftPos = leftPosBoost; 
     let bgPos = 48;
+    animationFlag = true;
     setTimeout(function go() {
-      animationFlag = true;
       if (leftPos <= phonesShift) {
         phones[0].style.left = `${phonesShift - leftPos + phoneStartLeft}px`;
         phones[1].style.left = `${phonesShift - leftPos + phoneStartRight}px`;
@@ -146,7 +178,7 @@ function onChevRight() {
         sliderWrapper.style.backgroundPosition = `${bgPosLeft}% 50%`; 
         animationFlag = false;
       }
-      leftPos += 10;
+      leftPos += leftPosBoost;
       bgPos -= 2;
     }, 5);
   }
@@ -155,7 +187,7 @@ function onChevRight() {
     sliderWrapper.style.backgroundPosition = `${bgPosRight}% 50%`;
     slider.classList.add('slider_active');
     let leftPos = phonesShift - 10;
-    let bgPos = bgPosRight + 36;
+    let bgPos = bgPosRight + bgAdditionStart;
     setTimeout(function go() {
       animationFlag = true;
       if (leftPos > 0) {
@@ -172,12 +204,14 @@ function onChevRight() {
         phones[1].style.left = `${phoneStartRight - phonesShift}px`; 
         animationFlag = false;
       }
-      leftPos -= 10;
+      leftPos -= leftPosBoost;
       bgPos -= 2;
     }, 5);
   }
 }
 
+let bgAdditionStart = 36; 
+let leftPosBoost = 10;
 let animationFlag = false; 
 let phoneStartLeft = 2;
 let phoneStartRight = -124; 
@@ -195,6 +229,10 @@ chevRight.addEventListener('click', onChevRight);
 
 let phonesButtons = document.querySelectorAll('.iphone-button');
 phonesButtons.forEach(item => item.addEventListener('click', clickOnPhone));
+
+window.matchMedia('(max-width: 1019px)').addListener(correctPhones);
+window.matchMedia('(max-width: 767px)').addListener(correctPhones);
+window.matchMedia('(max-width: 374px)').addListener(correctPhones);
 
 //Portfolio
 function changeTabColor(event) {
